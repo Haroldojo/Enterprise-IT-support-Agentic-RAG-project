@@ -1,9 +1,7 @@
 from app.core.config import get_settings
 from typing import Literal
 from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_tavily import TavilySearch
-from langchain_pinecone import PineconeVectorStore
 from langgraph.graph import StateGraph, START, END
 from app.core.config import get_settings
 from app.rag.state import AgentState, RouteDecision, EvidenceGrade
