@@ -1,6 +1,6 @@
 import time
 from pinecone import Pinecone, ServerlessSpec
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 from langchain_groq import ChatGroq
 from langchain_pinecone import PineconeVectorStore
 from app.core.config import get_settings
@@ -42,12 +42,11 @@ def get_embedding_dimension(model_name: str | None = None) -> int:
 
 
 def get_embeddings():
-    """Local embeddings (Groq has no embeddings API)."""
+    """Local embeddings using FastEmbed (no Hugging Face API credits)."""
     global _embeddings
     if _embeddings is None:
-        _embeddings = HuggingFaceEmbeddings(
+        _embeddings = FastEmbedEmbeddings(
             model_name=settings.embedding_model,
-            encode_kwargs={"normalize_embeddings": True},
         )
     return _embeddings
 
