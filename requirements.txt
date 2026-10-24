@@ -10,13 +10,12 @@ langchain-community==0.4.2
 langchain-tavily==0.2.18
 langchain-pinecone>=0.1.0
 langchain-text-splitters==1.1.2
+langchain-groq
 
 pinecone==7.3.0
-langchain-groq
+
+fastembed>=0.7.0
+
 pypdf==6.16.2
 python-docx==1.2.0
 python-dotenv==1.1.1
-python-docx==1.2.0
-uvicorn
-fastapi
-langchain-huggingface
